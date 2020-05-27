@@ -1,2 +1,2 @@
-
-.vscode/settings.json
+# Ignoring VSCode's Workspace directory
+.vscode/
