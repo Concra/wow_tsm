@@ -1,10 +1,10 @@
-[min]
+[minprice]
 first(115%max(avgbuy, vendorsell, vendorbuy, 1s), 70%min(dbmarket, dbhistorical, 150%dbregionmarketavg, dbregionhistorical)),
 
-[norm]
+[normprice]
 max(130%max(avgbuy, max(vendorsell, vendorbuy, 1s)), min(dbmarket, dbhistorical, dbregionmarketavg, dbregionhistorical)),
 
-[max]
+[maxprice]
 500%max(130%max(avgbuy, vendorsell, vendorbuy, 1s), min(dbmarket, first(dbhistorical, dbregionmarketavg, dbregionhistorical))),
 
 [minexpires]
