@@ -1,0 +1,17 @@
+[concramin]
+first(115%max(avgbuy, vendorsell, vendorbuy, 1s), 70%min(dbmarket, dbhistorical, 150%dbregionmarketavg, dbregionhistorical)),
+
+[concranorm]
+max(130%max(avgbuy, max(vendorsell, vendorbuy, 1s)), min(dbmarket, dbhistorical, dbregionmarketavg, dbregionhistorical)),
+
+[concramax]
+500%max(130%max(avgbuy, vendorsell, vendorbuy, 1s), min(dbmarket, first(dbhistorical, dbregionmarketavg, dbregionhistorical))),
+
+[concraminexpires]
+ifgt((numexpires * 60%vendorsell), concramin, 0-1, concramin),
+
+[expecteddepositfees]
+(1 / dbregionsalerate - 1) * 60% vendorsell,
+
+[paiddepositfees]
+numexpires*32%vendorsell
